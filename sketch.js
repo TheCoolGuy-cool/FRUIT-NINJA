@@ -130,6 +130,10 @@ score=0;
 fill("yellow");
 textSize(26);
 text("Press R to restart",255,420);  
+  
+fill("white");
+textSize(26);
+text("Score:"+score,100,100);
 }
   
 }
@@ -247,8 +251,13 @@ function cutting_aliens(){
 
 if(sword.isTouching(alien1_group)){
 alien1_group.destroyEach();
-score=score-200;
 bomb_sound.play();
+if(score>99){
+score=score-100;
+}
+if(score<100){
+score=0;
+}
 }
 
 if(sword.isTouching(alien2_group)){
